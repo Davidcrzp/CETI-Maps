@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>Map finder</title>
+  </head>
+  <body onload="loadPage()">
+    <div id="wrapper">
+      <form id="map_form" onsubmit="preventRefresh(); return false">
+        <h1 id="title">CETI maps</h1>
+        <hr />
+
+        <div id="div1" class="selects">
+          <label id="label1" for="select1">Usuario:</label>
+          <select id="select1" onchange="loadSelected1()" required>
+            <option value="default" selected hidden>
+              Seleccione una opcion
+            </option>
+            <option value="visitante">Visitante</option>
+            <option value="aspirante">Aspirante</option>
+            <option value="estudiante">Estudiante</option>
+            <option value="profesor">Profesor</option>
+            <option value="administrativo">Administrativo</option>
+          </select>
+        </div>
+
+        <!-- <div>
+          <input type="number" placeholder="Registro" id="registro" required />
+        </div> -->
+
+        <div id="div2" class="selects">
+          <label id="label2" for="select2"></label>
+          <select id="select2" onchange="loadSelected2()" required>
+            <option value="default" selected hidden>
+              Seleccione una opcion
+            </option>
+          </select>
+        </div>
+
+        <div id="div3" class="selects">
+          <label id="label3" for="select3"></label>
+          <select id="select3" onchange="loadSelected3()" required></select>
+        </div>
+
+        <br />
+        <div id="submit">
+          <button id="map_button" onclick="Mappedin()">Buscar mapa</button>
+          <button id="pdf_button" onclick="PDF()">Buscar PDF</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
