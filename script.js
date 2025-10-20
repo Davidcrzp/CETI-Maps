@@ -40,7 +40,6 @@ function loadSelected1() {
       "taller|Taller",
       "departamento|Departamento",
 	  "conferencia/recreacion|Conferencia/Recreacion",
-      "reservado|Reservado",
       "almacen|Almacen",
       "baño|Baño",
     ];
@@ -51,7 +50,6 @@ function loadSelected1() {
       "departamento|Departamento",
       "tramite|Tramite",
 	  "conferencia/recreacion|Conferencia/Recreacion",
-      "reservado|Reservado",
       "almacen|Almacen",
       "site|Site",
       "baño|Baño",
@@ -133,10 +131,6 @@ function loadSelected2() {
       "almacen_SOA|Almacen SOA",
       "almacen_recursos_humanos|Almacen Recursos Humanos",
     ];
-  } else if (select2 === "reservado") {
-    select3.options[0].textContent = "Seleccione un espacio";
-    label3.textContent = "Reservado";
-    var optionArray = ["sala_juntas_A|Sala de juntas A"];
   } else if (select2 === "site") {
     select3.options[0].textContent = "Seleccione un site";
     label3.textContent = "Site";
@@ -169,7 +163,8 @@ function preventRefresh() {
 
 function StaticMap() {
   if (search === "b_200") {
-    window.location.assign('maps/b-200.html');
+    //window.location.assign('maps/b-200.html');
+	alert("No implementado");
   } else if (search === "taller_farmacos") {
     window.location.assign('maps/taller_farmacos.html');
   } else if (search === "direccion") {
@@ -198,8 +193,6 @@ function StaticMap() {
     window.location.assign('maps/almacen_subdireccion_servicios.html');
   } else if (search === "almacen_SOA") {
     window.location.assign('maps/almacen_SOA.html');
-  } else if (search === "sala_juntas_A") {
-    window.location.assign('maps/sala_juntas_A.html');
   } else if (search === "site_A") {
     window.location.assign('maps/site_A.html');
   } else if (search === "goe") {
@@ -253,8 +246,6 @@ function Mappedin() {
     linkBuilder += almacen_subdireccion_servicios;
   } else if (search === "almacen_SOA") {
     linkBuilder += almacen_SOA;
-  } else if (search === "sala_juntas_A") {
-    linkBuilder += sala_juntas_A;
   } else if (search === "site_A") {
     linkBuilder += site_A;
   } else if (search === "goe") {
@@ -300,7 +291,6 @@ const apoyo_academico = (servicio_social = "&location=loc_8db0f696426325b9");
 const enfermeria = "&location=loc_e3714d8c4cff2c0d";
 const almacen_subdireccion_servicios = "&location=loc_b2a788441b9c0b23";
 const almacen_SOA = "&location=loc_d15c93222cf9e526";
-const sala_juntas_A = "&location=loc_011f52fe7b60b1b8";
 const site_A = "&location=loc_fdbad02f92020ef0+loc_13fffed99f8de1d7";
 
 // Edificio B
