@@ -22,6 +22,7 @@ function loadSelected1() {
       "salon|Salon",
       "departamento|Departamento",
       "tramite|Tramite",
+	  "conferencia/recreacion|Conferencia/Recreacion",
       "baño|Baño",
     ];
   } else if (select1 === "aspirante" || select1 === "estudiante") {
@@ -30,6 +31,7 @@ function loadSelected1() {
       "taller|Taller",
       "departamento|Departamento",
       "tramite|Tramite",
+	  "conferencia/recreacion|Conferencia/Recreacion",
       "baño|Baño",
     ];
   } else if (select1 === "profesor") {
@@ -37,6 +39,7 @@ function loadSelected1() {
       "salon|Salon",
       "taller|Taller",
       "departamento|Departamento",
+	  "conferencia/recreacion|Conferencia/Recreacion",
       "reservado|Reservado",
       "almacen|Almacen",
       "baño|Baño",
@@ -47,6 +50,7 @@ function loadSelected1() {
       "taller|Taller",
       "departamento|Departamento",
       "tramite|Tramite",
+	  "conferencia/recreacion|Conferencia/Recreacion",
       "reservado|Reservado",
       "almacen|Almacen",
       "site|Site",
@@ -112,6 +116,15 @@ function loadSelected2() {
       "servicio_social|Servicio Social",
       "enfermeria|Enfermeria",
     ];
+  } else if (select2 === "conferencia/recreacion|Conferencia/Recreacion") {
+    select3.options[0].textContent = "Seleccione un area";
+    label3.textContent = "Conferencias/Recreacion";
+    var optionArray = [
+      "gimnasio|Gimnasio",
+      "auditorio|Auditorio",
+      "canchas|Canchas",
+    ];
+	
   } else if (select2 === "almacen") {
     select3.options[0].textContent = "Seleccione un almacen";
     label3.textContent = "Almacen";
@@ -128,7 +141,7 @@ function loadSelected2() {
     select3.options[0].textContent = "Seleccione un site";
     label3.textContent = "Site";
     var optionArray = ["site_A|Site A"];
-  } else if (select2 === "baño") {
+	} else if (select2 === "baño") {
     select3.options[0].textContent = "Seleccione el baño mas cercano";
     label3.textContent = "Baño";
     var optionArray = ["no|No disponible"];
@@ -154,16 +167,57 @@ function preventRefresh() {
     .addEventListener("submit", (event) => event.preventDefault());
 }
 
-function PDF() {
-  const search = document.getElementById("select3").value;
-  let linkBuilder = "https://drive.google.com/file/d/";
-  if (search === "direccion") {
-    linkBuilder += "1-kWQNIXOOWFrLycx4ooDmLIVzr9IWqkf/view";
+function StaticMap() {
+  if (search === "b_200") {
+    window.location.assign('maps/b-200.html');
+  } else if (search === "taller_farmacos") {
+    window.location.assign('maps/taller_farmacos.html');
+  } else if (search === "direccion") {
+    window.location.assign('maps/direccion.html');
+  } else if (search === "subdireccion_operacion_academica") {
+    window.location.assign('maps/subdireccion_operacion_academica.html');
+  } else if (search === "coordinacion_eventos" || search === "coordinacion_asesorias") {
+    window.location.assign('maps/coordinacion_eventos.html');
+  } else if (search === "coordinacion_arte_deporte") {
+    window.location.assign('maps/coordinacion_arte_deporte.html');
+  } else if (search === "propedeutico") {
+    window.location.assign('maps/propedeutico.html');
+  } else if (search === "aula_magna") {
+    window.location.assign('maps/aula_magna.html');
+  } else if (search === "apoyo_academico" || search === "servicio_social") {
+    window.location.assign('maps/apoyo_academico.html');
+  } else if (search === "diseño_virtual") {
+    window.location.assign('maps/diseño_virtual.html');
+  } else if (search === "contralor") {
+    window.location.assign('maps/contralor.html');
+  } else if (search == "docentes") {
+    window.location.assign('maps/docentes.html');
+  } else if (search === "enfermeria") {
+    window.location.assign('maps/enfermeria.html');
+  } else if (search === "almacen_subdireccion_servicios") {
+    window.location.assign('maps/almacen_subdireccion_servicios.html');
+  } else if (search === "almacen_SOA") {
+    window.location.assign('maps/almacen_SOA.html');
+  } else if (search === "sala_juntas_A") {
+    window.location.assign('maps/sala_juntas_A.html');
+  } else if (search === "site_A") {
+    window.location.assign('maps/site_A.html');
+  } else if (search === "goe") {
+    window.location.assign('maps/goe.html');
+  } else if (search === "recursos_humanos") {
+    window.location.assign('maps/recursos_humanos.html');
+  } else if (search === "almacen_recursos_humanos") {
+    window.location.assign('maps/almacen_recursos_humanos.html');
+  } else if (search === "gimnasio") {
+    window.location.assign('maps/gimnasio.html');
+  } else if (search === "auditorio") {
+    window.location.assign('maps/auditorio.html');
+  } else if (search === "canchas") {
+    window.location.assign('maps/canchas.html');
   } else {
-    alert("PDF no disponible");
+    alert("No implementado");
     return;
   }
-  window.open(linkBuilder, "_blank");
 }
 
 function Mappedin() {
@@ -177,10 +231,7 @@ function Mappedin() {
     linkBuilder += direccion;
   } else if (search === "subdireccion_operacion_academica") {
     linkBuilder += subdireccion_operacion_academica;
-  } else if (
-    search === "coordinacion_eventos" ||
-    search === "coordinacion_asesorias"
-  ) {
+  } else if (search === "coordinacion_eventos" || search === "coordinacion_asesorias") {
     linkBuilder += coordinacion_eventos;
   } else if (search === "coordinacion_arte_deporte") {
     linkBuilder += coordinacion_arte_deporte;
@@ -212,6 +263,12 @@ function Mappedin() {
     linkBuilder += recursos_humanos;
   } else if (search === "almacen_recursos_humanos") {
     linkBuilder += almacen_recursos_humanos;
+  } else if (search === "gimnasio") {
+	linkBuilder += gimnasio;
+  } else if (search === "auditorio") {
+	linkBuilder += auditorio;
+  } else if (search === "canchas") {
+	linkBuilder += canchas;
   } else {
     alert("No implementado");
     return;
@@ -259,5 +316,7 @@ const almacen_recursos_humanos = "&location=loc_2a29dfc897d6cdf8";
 // Edificio R
 const oficinas_r = "&location=loc_4e23cb948bda76c1";
 
-// Otros
+// Conferencia / Recreacion
+const gimnasio = "&location=loc_3b5be61174c8a3a0";
+const auditorio = "&location=loc_82073478dadc2878";
 const canchas = "&location=loc_980760936770c3ce";
