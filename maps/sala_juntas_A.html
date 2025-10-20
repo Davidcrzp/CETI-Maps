@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang=en>
-  <head>
-    <meta charset=UTF-8 />
-    <meta name=viewport content=width=device-width, initial-scale=1.0 />
-    <title>Mapa</title>
-  </head>
-  <body>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa</title>
+  <link rel="stylesheet" href="../styles/maps.css">
+</head>
+<body>
+
+  <div class="slider-container">
+    <button class="nav-button left-button" onclick="prevImage()">⟨</button>
+    <img id="slider" class="slider-image" src="" alt="Imagen Slider">
+    <button class="nav-button right-button" onclick="nextImage()">⟩</button>
+  </div>
+
+  <script src="slides.js"></script>
+</body>
 </html>
 

@@ -162,6 +162,7 @@ function preventRefresh() {
 }
 
 function StaticMap() {
+  const search = document.getElementById("select3").value;
   if (search === "b_200") {
     //window.location.assign('maps/b-200.html');
 	alert("No implementado");
